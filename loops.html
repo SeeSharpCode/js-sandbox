@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        for (var i = 0; i < 10; i++) {
+            write("i " + i);
+        }
+
+        var j = 0;
+        do {
+            write("j " + j);
+            j++;
+        } while (j < 10)
+
+        var k = 0;
+        while (k < 10) {
+            k++;
+            if (k == 3) {
+                continue;
+            } else if (k == 6) {
+                break;
+            }
+            write("k " + k);
+        }
+
+        var myObject = {
+            a: 1,
+            b: "theThing",
+            c: true
+        };
+
+        for (var property in myObject) {
+            write(property + " | " + myObject[property]);
+        }
+
+        var arr = [3,5,7];
+        arr.foo = "hello";
+
+        for (var i in arr) {
+            write(i);
+        }
+
+        for (var j of arr) {
+            write(j);
+        }
+
+        function write(value) {
+            document.write(value + "<br>")
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

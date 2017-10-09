@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        write(typeof car);
+        write(typeof 'thing');
+        write(typeof window.length);
+
+        var car = {
+            make: "Ford"
+        };
+        write("make" in car);
+        write("model" in car);
+
+        var arr = [1,2,3];
+        write(arr instanceof Array);
+
+        function write(value) {
+            document.write(value + "<br>");
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>

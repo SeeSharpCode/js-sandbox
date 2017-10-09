@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // simple function
+        function square(number) {
+            return number * number;
+        }
+
+        // pass by value
+        var dog = {
+            name: "Bob"
+        }
+        function changeDogName(dog) {
+            dog.name = "Sam";
+        }
+        write(dog.name);
+        changeDogName(dog);
+        write(dog.name);
+
+        // function expression - function assigned to variable
+        var getSquare = function (number) {
+            return number * number;
+        };
+        var x = getSquare(4);
+        write(x);
+
+        // functions as arguments
+        function calculate(fun, a, b) {
+            return fun(a, b);
+        }
+        write(calculate(function (a, b) { return a + b; }, 1, 2));
+
+        // nested functions
+        function outside(x) {
+            function inside(y) {
+                return x + y;
+            }
+            return inside;
+        }
+        var fun1 = outside(3);
+        var result = fun1(5);
+        write(result);
+
+        // using the arguments object
+        function useArgs() {
+            for (var a of arguments) {
+                write(a);
+            }
+        }
+        useArgs("foo", "bar", "baz", "quirk");
+
+        // default parameters
+        function sayHello(name = "Bob") {
+            write(name);
+        }
+        sayHello();
+
+        // arrow functions
+        var a = [
+            'A',
+            'Bo',
+            'Foo'
+        ];
+        var a2 = a.map(s => s.length);
+        write(a2);
+
+        function write(value) {
+            document.write(value + "<br>");
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>

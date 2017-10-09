@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        const PI = 3.14;
+        var foo = "bar"; // local or global
+        write(foo);
+
+        bar = "foo"; // global, don't use
+        let x = 13; // block-scope
+
+        // global scope
+        if (true) {
+            var y = 5;
+        }
+        write(y);
+
+        // block scope
+        if (true) {
+            let z = 6;
+        }
+        try {
+            write(z);            
+        } catch (error) {
+            write(error);
+        }
+
+        var myvar = 'my value';
+        (function() {
+            // writes undefined because hoisted variables are always undefined
+            write(myvar);
+            var myvar = 'local value';
+        })();
+
+        var a;
+        write('The value of a is ' + a); // undefined
+
+        write('The value of b is ' + b); // undefined
+        var b;
+
+        try {
+            write('The value of c is ' + c); // ReferenceError
+        } catch (error) {
+            write(error);
+        }
+
+        function write(value) {
+            document.write(value + '<br>');
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>

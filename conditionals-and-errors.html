@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        if (1 == 2) {
+        } else if (1 == 3) {
+        } else {
+            write("else");
+        }
+
+        var foo = "foo";
+        switch (foo) {
+            case "bar":
+                write("case 1");
+                break;
+            case "foo":
+                write("case 2");
+                break;
+            default:
+                write("default");
+        }
+
+        try {
+            throw "Biggest Error Ever";            
+        } catch (error) {
+            write(error);
+        } finally {
+            write("Finally");
+        }
+
+        try {
+            throw new Error('error message');
+        } catch (error) {
+            write(error.name + " | " + error.message);
+        }
+
+        function write(value) {
+            document.write(value + "<br>");
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
