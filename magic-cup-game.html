@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        window.onload = function () {
+            var gameStatus = document.getElementById("gameStatus");
+            var images = document.getElementsByTagName("img");
+            updateStatus(images.length);
+            var magicCup = Math.floor(Math.random() * images.length);
+
+            for (var i of images) {
+                i.addEventListener("click", function () {
+                    if (this === images[magicCup]) {
+                        this.setAttribute("src", "https://www.what-dog.net/Images/faces2/scroll0015.jpg");
+                        updateStatus("You win!");
+                    } else {
+                        updateStatus("Nope");
+                    }
+                }, false);
+            }
+
+            function updateStatus(value) {
+                gameStatus.innerHTML = value;
+            }
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div align="center">
+        <img id="cup1" src="https://www.cater4you.co.uk/acatalog/red-plastic-party-cup-upside-1000.jpg" height=100 width=100 />
+        <img id="cup2" src="https://www.cater4you.co.uk/acatalog/red-plastic-party-cup-upside-1000.jpg" height=100 width=100 />
+        <img id="cup3" src="https://www.cater4you.co.uk/acatalog/red-plastic-party-cup-upside-1000.jpg" height=100 width=100 />
+        <p id="gameStatus"></p>
+    </div>
+</body>
+</html>

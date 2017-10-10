@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // object literal
+        var myDog = {
+            name: "Spot",
+            sex: "male",
+            isStray: false
+        };
+
+        // constructor
+        function Person(name, height) {
+            this.name = name;
+            this.height = height;
+        }
+        var person = new Person("Tyler", 70);
+        write(person.height);
+
+        // this
+        write(this);
+
+        function write(value) {
+            document.write(value + "<br>");
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
