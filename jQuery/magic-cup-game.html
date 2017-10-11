@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            var getMagicCup = () => { return $("img")[Math.floor(Math.random() * $("img").length)]; };
+            var magicCup = getMagicCup();
+            
+            var resetGame = function() {
+                $("img").attr("src", "https://www.cater4you.co.uk/acatalog/red-plastic-party-cup-upside-1000.jpg");
+                $("img").click(function() {
+                    if (this === magicCup) {
+                        winGame();
+                    } else {
+                        updateStatus("Nope, try again.");
+                    }
+                });
+
+                updateStatus("");
+                magicCup = getMagicCup();
+            };
+            $("#resetButton").click(resetGame);
+            resetGame();
+
+            function winGame() {
+                magicCup.setAttribute("src", "https://www.what-dog.net/Images/faces2/scroll0015.jpg");
+                updateStatus("You win!");
+
+                $("img").off("click");
+            }
+
+            function updateStatus(value) {
+                $("#gameStatus").text(value);
+            }
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div align="center">
+        <img id="cup1" src="https://www.cater4you.co.uk/acatalog/red-plastic-party-cup-upside-1000.jpg" height=100 width=100 />
+        <img id="cup2" src="https://www.cater4you.co.uk/acatalog/red-plastic-party-cup-upside-1000.jpg" height=100 width=100 />
+        <img id="cup3" src="https://www.cater4you.co.uk/acatalog/red-plastic-party-cup-upside-1000.jpg" height=100 width=100 />
+        <p id="gameStatus"></p>
+        <button id="resetButton">Reset</button>
+    </div>
+</body>
+</html>
