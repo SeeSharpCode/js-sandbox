@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // push/pop        
+        var foo = [];
+        foo.push(1);
+        foo.push(2, 3);
+        write(foo.length); // 3
+        foo.pop();
+        write(foo.length); // 2
+        foo.push(3);
+
+        // shift/unshift
+        var firstNumber = foo.shift();
+        write(firstNumber); // 1, which is removed from the array as trailing elements are shifted left
+        var newCount = foo.unshift(1); // putting back the 1
+        write(foo[0]); // 1
+        write(newCount); // 3
+
+        // concat/splice
+        var concatFoo = foo.concat([4,5,6],7,8); 
+        write(concatFoo); // 1,2,3,4,5,6,7,8
+
+        var original = [1,2,3,4];
+        var spliced = original.splice(2);
+        write(original); // 1,2
+        write(spliced); // 3,4
+        // TODO slice vs splice
+
+        function write(value) {
+            document.write(value + "<br>");
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
