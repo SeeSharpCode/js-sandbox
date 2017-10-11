@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var foo = {
+            name: "Hey"
+        };
+        function changeFooName(localFoo) {
+            localFoo.name = "New Name";
+        }
+        changeFooName(foo);
+        write(foo.name); // New Name
+        
+        // arrays are reference types
+        var a1 = [1, 2, 3];
+        var a2 = a1;
+        a1[0] = 99;
+        write(a2[0]); // 99
+
+        function write(value) {
+            document.write(value + "<br>");
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
