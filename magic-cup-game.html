@@ -20,13 +20,18 @@
             };
 
             var resetGame = function() {
-                for (var image of images) {
+                // for (var image of images) {
+                //     image.setAttribute("src", "https://www.cater4you.co.uk/acatalog/red-plastic-party-cup-upside-1000.jpg");
+                //     image.addEventListener("click", imgClickHandler, false);
+                // }
+
+                Array.from(images).forEach(image => {
                     image.setAttribute("src", "https://www.cater4you.co.uk/acatalog/red-plastic-party-cup-upside-1000.jpg");
                     image.addEventListener("click", imgClickHandler, false);
-                }
+                });
 
                 updateStatus("");
-                magicCup = getMagicCup();                
+                magicCup = getMagicCup();
             };
 
             resetButton.addEventListener("click", resetGame, false);
@@ -40,7 +45,7 @@
                 for (var image of images) {
                     image.removeEventListener("click", imgClickHandler);
                 }
-            }            
+            }
 
             function updateStatus(value) {
                 gameStatus.innerHTML = value;
