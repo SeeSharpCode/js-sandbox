@@ -22,11 +22,17 @@
         var concatFoo = foo.concat([4,5,6],7,8); 
         write(concatFoo); // 1,2,3,4,5,6,7,8
 
+        // splice cuts elements from the original array
         var original = [1,2,3,4];
         var spliced = original.splice(2);
         write(original); // 1,2
         write(spliced); // 3,4
-        // TODO slice vs splice
+
+        // slice just copies a subset of the array and leaves the original array intact
+        original = [1,2,3,4];
+        var sliced = original.slice(2);
+        write(original); // 1,2,3,4
+        write(sliced); // 3,4
 
         function write(value) {
             document.write(value + "<br>");
